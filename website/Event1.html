@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link href="css/event/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/event/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="js/event/jquery-1.11.1.min.js"></script>
+
+<link href='css/event/web1.css' rel='stylesheet' type='text/css'>
+<link href='css/event/web2.css' rel='stylesheet' type='text/css'>
+<link href='css/event/web3.css' type='text/css'>
+
+<link rel="stylesheet" href="css/event/reset.css">
+<link rel="stylesheet" href="css/event/index.css">
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="header-inner body-width">
+  <a href="#" class="logo"></a>
+  <div class="category">
+  </div>
+
+  <div class="search">
+	<input type="searchtext" class="search-text" placeholder="Seach here...">
+	<!-- <a class="search-btn"><i class="icon-search"></i></a> -->
+  </div>
+
+  <nav class="header-nav">
+	<ul>
+	  <li>
+		<span class="line"></span>
+		<a href="#" class="dreamer">Mine</a>
+		<i class="icon-text__pink icon-new">new</i>
+	  </li>
+	  <li>
+		<span class="line"></span>
+		<a href="#" class="icon-text__pink register">Sign up</a>
+	  </li>
+	  <li>
+		<span class="line"></span>
+<!-- login -->
+		<a href="#" class="icon-text__pink login" onclick="document.getElementById('id01').style.display='block'" >  Log in </a>
+
+<div id='id01' class="modal">
+	<form class="modal-content animate" action='/action_page.php'>
+		<div class="imgcontainer">
+			<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+			 <h1 class="HeadOne">Moments</h1>
+		</div>
+
+	<div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Submit</button>
+      <input type="checkbox" checked="checked"> Remember Me 
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+  	</div>
+	</form>
+</div>
+
+	  </li>
+	  <li>
+		<span class="line"></span>
+		<i class="icon-app"></i>
+		<a href="#" class="app">English</a>
+		<i class="icon-arrow"></i>
+		<div class="app-hover">
+		  <a href="#"></a>
+		  <p>Scan</p>
+		</div>
+	  </li>
+	</ul>
+  </nav>
+</div>
+</header>
+
+
+
+
+
+<!--左边一点击就跳出的个人信息粉红区域-->
+<div>
+<input type="checkbox" id="menu" />
+<label for="menu" class="menu">
+	<span></span>
+	<span></span>
+	<span></span>
+</label>
+
+<nav class="nav">
+  	<img class="UserHeadPortrait" src="./images/cont/2.jpg">
+  	   <p class="UserName">Gabrielle</p>
+  <ul>
+    <li><a href="#">My Society</a></li>
+    <li><a href="#">My Events</a></li>
+    <li><a href="#">Settings</a></li>
+  </ul>
+</nav>
+</div>
+
+
+
+
+<!-- banner-body -->
+	<div class="banner-body">
+		<div class="containerEvent">
+			<div class="banner-body-content">
+				<!-- <div class="col-xs-3 banner-body-right"> -->
+				<div class="wmuSlider example1">
+					<div class="wmuSliderWrapper">
+						<article style="position: absolute; width: 100%; opacity: 0;"> 
+							<div class="banner-wrap">
+								<div class="banner">
+								</div>
+							</div>
+						</article>
+						<article style="position: absolute; width: 100%; opacity: 0;"> 
+							<div class="banner-wrap">
+								<div class="banner1">
+								</div>
+							</div>
+						</article>
+						<article style="position: absolute; width: 100%; opacity: 0;"> 
+							<div class="banner-wrap">
+								<div class="banner2">
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+
+					<script src="js/event/jquery.wmuSlider.js"></script> 
+					  <script>
+						$('.example1').wmuSlider();         
+					 </script> 
+
+				<div class="banner-bottom">
+					<div class="col-md-4 banner-left">
+						<div class="col-xs-3 banner-left1">
+							<div class="banner-left11">
+								<span> </span>
+							</div>
+						</div>
+						<div class="col-xs-9 banner-right1">
+							<h3>Time</h3>
+						</div>
+						<div class="clearfix"> </div>
+						<p>Friday 1st Feburary 2019</p>
+					</div>
+					<div class="col-md-4 banner-left">
+						<div class="col-xs-3 banner-left1">
+							<div class="banner-left22">
+								<span> </span>
+							</div>
+						</div>
+						<div class="col-xs-9 banner-right1">
+							<h3>Location</h3>
+						</div>
+						<div class="clearfix"> </div>
+						<p>Revolution Liverpool</p>
+					</div>
+					<div class="col-md-4 banner-left">
+						<div class="col-xs-3 banner-left1">
+							<div class="banner-left33">
+								<span> </span>
+							</div>
+						</div>
+						<div class="col-xs-9 banner-right1">
+							<h3>Description</h3>
+						</div>
+						<div class="clearfix"> </div>
+						<p>Only club members allowed</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+			<!--注册活动按钮-->
+<div class="RegisterEvent">
+	<button type="button" id="RE" onclick="alert('You have registered successfully.')"> Register </button>
+
+</div>
+			</div>
+
+
+
+
+<!--comments部分-->
+				<div class="three-com">
+							<h3>2 Comment <span>on</span> <label>K-pop Party Lunar Year Celebration</label></h3>
+							<div class="tom-grid">
+								<div class="tom">
+									<img src="./images/cont/2.jpg" alt=" " />
+								</div>
+								<div class="tom-right">
+									<div class="Hardy">
+										<h4><a href="#">NaNa</a></h4>
+										<p><label>22 March 2019</label></p>
+									</div>
+									<div class="reply">
+										<a href="#">Reply</a>
+									</div>
+									<div class="clearfix"> </div>
+									<p class="lorem">I really enjoy this activity. It is so fun.I really enjoy this activity. It is so fun.I really enjoy this activity. It is so fun.I really enjoy this activity. It is so fun.</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="tom-grid humour">
+								<div class="tom">
+									<img src="./images/cont/1.jpg" alt=" " />
+								</div>
+								<div class="tom-right">
+									<div class="Hardy">
+										<h4><a href="#">Belly</a></h4>
+										<p><label>22 March 2018</label></p>
+									</div>
+									<div class="reply">
+										<a href="#">Reply</a>
+									</div>
+									<div class="clearfix"> </div>
+									<p class="lorem">I really enjoy this activity. It is so fun.I really enjoy this activity. It is so fun.I really enjoy this activity. It is so fun.I really enjoy this activity. It is so fun.</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+
+				<div class="leave-comment">
+							<h4>Leave your comment</h4>
+							<form>
+								<input type="text" placeholder="Name" required=" ">			           					   
+								<textarea placeholder="Message" required=" "></textarea>
+								<input type="submit" value="Submit">
+								<div class="clearfix"> </div>
+							</form>
+						</div>
+
+
+<!--相关活动推荐-->
+				<div class="msg-text-bottom">
+					<div class="col-md-4 msg-text-bottom-left">
+						<!-- <h4>The Events You Might Like</h4> -->
+						<figure class="effect-winston">
+							<a href="single.html"><img src="./images/cont/EventHeader2.jpg" alt=" " class="img-responsive" />
+							<figcaption>
+								
+							</figcaption>		
+							</a>
+						</figure>
+
+						<h3><a href="single.html">K-pop party</a></h3>
+						<p>The Kpop party descriptionThe Kpop party description The Kpop party description The Kpop party description </p>
+					</div>
+					<div class="col-md-4 msg-text-bottom-left">
+						<figure class="effect-winston">
+							<a href="single.html"><img src="./images/cont/EventHeader2.jpg" alt=" " class="img-responsive" />
+							<figcaption>
+								
+							</figcaption>	
+							</a>
+						</figure>
+						<h3><a href="single.html">K-pop party</a></h3>
+						<p>The Kpop party description The Kpop party description The Kpop party description The Kpop party description </p>
+					</div>
+					<div class="col-md-4 msg-text-bottom-left">
+						<figure class="effect-winston">
+							<a href="single.html"><img src="./images/cont/EventHeader2.jpg" alt=" " class="img-responsive" />
+							<figcaption>
+								
+							</figcaption>	
+							</a>
+						</figure>
+						<h3><a href="single.html">K-pop party</a></h3>
+						<p>The Kpop party description The Kpop party description The Kpop party description The Kpop party description </p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+
+
+
+			<!--网站最底下关于网站基本信息的一栏-->
+			<div class="clearfix"> </div>
+			<div class="footer">
+				<div class="footer-left">
+					<ul>
+						<li><a href="#">Privacy Policy</a>|</li>
+						<li><a href="#">Terms of Use</a>|</li>
+						<li><a href="mail.html">Contact Us</a></li>
+					</ul>
+					<p>Copyright &copy; 2019.Moments studio. All rights reserved.</p>
+				</div>
+				<div class="footer-right">
+					<ul class="social-nav model-3">
+						<li><a href="#" class="icon icon-border facebook"></a></li>
+						<li><a href="#" class="icon icon-border twitter"></a></li>
+						 <li><a href="#" class="icon icon-border googleplus"></a></li>
+						 <li><a href="#" class="icon icon-border github"></a></li>
+						 <li><a href="#" class="icon icon-border rss"></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	
+<!-- //banner-body -->
+<!-- for bootstrap working -->
+	<script src="js/event/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>
