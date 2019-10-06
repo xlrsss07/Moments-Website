@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="icon" href="images/Favicon.png" >
+    <link rel="stylesheet" href="./css/home/index.css">
+
+    <script src="js/home/font-awesome.5.8.0.all.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/home/posterTvGrid.css">
+    <script src="js/home/jquery.min.js" type="text/javascript"></script>
+    <script src="js/home/posterTvGrid.js" type="text/javascript"></script>
+
+</head>
+<script>
+    //nocache = "&nocache=" + Math.random() * 1000000
+    function sendAjax(url, method, param, fnSucc) {
+        //url="./../../fuckwebsite/eventback.php?id=1";
+        var request = new ajaxRequest();
+        //request.open("GET", "urlget.php?url=amazon.com/gp/aw" + nocache, true)
+        //request.open("GET", "./../../fuckwebsite/eventback.php?id=1",true);
+        if (method === "GET") {
+            //alert(url+"?"+param);
+            request.open("GET", url + "?" + param, true);
+            request.send(null);
+        } else if (method === "POST") {
+            request.open("POST", url, true)
+            request.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+            request.send(param);
+        }
+
+        request.onreadystatechange = function() {
+            if (this.readyState === 4) {
+                if (this.status === 200) {
+                    if (this.responseText != null) {
+                        //document.getElementById('info').innerHTML =String(this.responseText);
+                        //fnSucc(this.responseText);
+                        //alert(this.responseText)
+                        var obj = JSON.parse(this.responseText);
+                        fnSucc(obj);
+                    } else alert("Ajax error: No data received")
+                } else alert("Ajax error: " + this.statusText)
+            }
+        }
+    }
+
+    function getHsonLength(json) {
+        var jsonLength = 0;
+        for (var i in json) {
+            jsonLength++;
+        }
+        return jsonLength;
+    }
+
+    function ajaxRequest() {
+        try {
+            var request = new XMLHttpRequest()
+        } catch (e1) {
+            try {
+                request = new ActiveXObject("Msxml2.XMLHTTP")
+            } catch (e2) {
+                try {
+                    request = new ActiveXObject("Microsoft.XMLHTTP")
+                } catch (e3) {
+                    request = false
+                }
+            }
+        }
+        return request
+    }
+
+    function a() {
+//第一个event rank list
+        sendAjax("./home.php", "GET", "", function(obj) {
+            var ul = document.getElementById("list");
+            var k= 10;
+            if(k>getHsonLength(obj.event_name)){
+            	k= getHsonLength(obj.event_name);
+            }
+                for (var i = 0; i < k; i++) {
+                    var li =document.createElement("li");
+                    li.setAttribute("class","show-wb-li");
+
+                    var span = document.createElement("span");
+                    span.setAttribute("class", "number");
+                    span.innerHTML = i+1;
+
+                    var a = document.createElement("a");
+                    a.setAttribute("href", obj.event_link[i]);
+                    a.innerHTML = obj.event_name[i];
+
+                    li.appendChild(span);
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                }
+// hot society rank list
+            var ul = document.getElementById("list2");
+            var k= 10;
+            if(k>getHsonLength(obj.society_link)){
+            	k= getHsonLength(obj.society_link);
+            }
+
+            for (var i = 0; i < k; i++) {
+                var li =document.createElement("li");
+                li.setAttribute("class","show-wb-li");
+
+                var span = document.createElement("span");
+                span.setAttribute("class", "number");
+                span.innerHTML = i+1;
+
+                var a = document.createElement("a");
+                a.setAttribute("href", obj.society_link[i]);
+                a.innerHTML = obj.society_name[i];
+
+                li.appendChild(span);
+                li.appendChild(a);
+                ul.appendChild(li);
+            }
+
+
+
+                var ul = document.getElementById("a");
+                for (var i = 0; i < getHsonLength(obj.event_link); i++) {
+                    var li =document.createElement("li");
+                    li.setAttribute("class","item1");
+
+                    var a3 = document.createElement("a");
+                    a3.setAttribute("class", "pic");
+                    a3.setAttribute("href", obj.event_link[i]);
+
+                    var img = document.createElement("img");
+                    img.setAttribute("src",obj.event_img[i]);
+
+
+                    var div = document.createElement("div");
+                    div.setAttribute("class", "info");
+
+                    var a4 = document.createElement("a");
+                    a4.setAttribute("class", "title");
+                    a4.setAttribute("href", obj.event_link[i]);
+                    a4.innerHTML = obj.event_name[i];
+
+
+                    a3.appendChild(img);
+                    div.appendChild(a4);
+                    li.appendChild(a3);
+                    li.appendChild(div);
+                    ul.appendChild(li);
+                }
+            }
+        );
+    }
+
+</script>
+
+<body onload="a()">
+
+	<iframe src="header.php" style="display:block; position:fixed;z-index:1000;" frameBorder=0 marginwidth=0 marginheight=0 scrolling=no width=100%  height=74 scrolling=no ALLOWTRANSPARENCY=”true”></iframe> </br></br></br></br>
+
+
+        <div id="posterTvGrid" style="margin:60px auto 0 auto;"></div>
+        <script type="text/javascript">
+            var posterTvGrid = new posterTvGrid('posterTvGrid', {
+                className: "posterTvGrid"
+            }, [    {
+                    "img": "images/home/1.jpg",
+                    "title": "Lorem ipsum dolor sit amet",
+                    "url": "#"
+                },      {
+                    "img": "images/home/2.jpg",
+                    "title": "Lorem ipsum dolor sit amet",
+                    "url": "#"
+                },      {
+                    "img": "images/home/3.jpg",
+                    "title": "Lorem ipsum dolor sit amet",
+                    "url": "#"
+                },      {
+                    "img": "images/home/4.jpg",
+                    "title": "Lorem ipsum dolor sit amet",
+                    "url": "#"
+                },      {
+                    "img": "images/home/5.jpg",
+                    "title": "Lorem ipsum dolor sit amet",
+                    "url": "#"
+                },
+
+                  
+            ]);
+        </script>
+
+        <div class="main-cont__title">
+            <h1 id="eventhref">Hot Events</h1>
+            <div class="border"></div>
+        </div>
+        <div class="main-cont main-album">
+
+            <div class="show-r">
+                <div class="show-wb-title">Hot event List</div>
+                <ul class="show-wb-list" id ='list'>
+                    <li class="show-wb-li more"></li>
+                </ul>
+                <li class="show-wb-li more"></li>
+
+            </div>
+
+            <div class="main-cont__list clearfix" >
+                <ul id='a'>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="main-cont__title">
+            <h1 id="societyhref">Societies</h1>
+            <div class="border"></div>
+        </div>
+
+
+        <div class="contain">
+            <div class="show-r">
+                <div class="show-wb-title">Hot Society List</div>
+                <ul class="show-wb-list" id="list2">
+                    <li class="show-wb-li more"></li>
+                </ul>
+                <li class="show-wb-li more"></li>
+            </div>
+
+            <div class="gallery">
+                <a href="academicsociety.html" class="image">
+                    <img src="./images/academic.jpg" alt="" />
+                </a>
+                <a href="artsociety.html" class="image">
+                    <img src="./images/art.jpg" alt="" />
+                </a>
+                <a href="culturesociety.html" class="image">
+                    <img src="./images/culture.jpg" alt="" />
+                </a>
+                <a href="generalinterest.html" class="image">
+                    <img src="./images/general.jpg" alt="" />
+                </a>
+                <a href="mediasociety.html" class="image">
+                    <img src="./images/media.jpg" alt="" />
+                </a>
+                <a href="outdoorsociety.html" class="image">
+                    <img src="./images/outdoor.jpg" alt="" />
+                </a>
+                <a href="sportssociety.html" class="image">
+                    <img src="./images/sports.jpg" alt="" />
+                </a>
+                <a href="volunteeringsociety.html" class="image">
+                    <img src="./images/volunteering.jpg" alt="" />
+                </a>
+            </div>
+        
+         <div class="clear"></div>
+    </div>
+        <script>
+            $('.gallery').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            })
+        </script>
+
+
+        <div class="main-cont__title">
+            <h1>Department</h1>
+            <div class="border"></div>
+        </div>
+
+        <div class="show2">
+            <ul class="show2-ct clear">
+                <li class="show2-li">
+                    <div class="show2-item clear">
+                        <a href="https://www.liverpool.ac.uk/sports/facilities/sports-and-fitness-centre/" class="show2-item-l">
+                            <img src="images/home/img1.jpg" alt="">
+                        </a>
+                        <div class="show2-item-r">
+                            <p><a href="https://www.liverpool.ac.uk/sports/facilities/sports-and-fitness-centre/" target="_blank" title="点击查看demo">Gym</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="show2-li">
+                    <div class="show2-item clear">
+                        <a href="https://libguides.liverpool.ac.uk/library" class="show2-item-l">
+                            <img src="images/home/img2.jpg" alt="">
+                        </a>
+                        <div class="show2-item-r">
+                            <p><a href="https://libguides.liverpool.ac.uk/library" target="_blank">Library</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="show2-li">
+                    <div class="show2-item clear">
+                        <a href="https://www.liverpool.ac.uk/study/openday/food/" target="_blank" class="show2-item-l">
+                            <img src="images/home/img3.jpg" alt="">
+                        </a>
+                        <div class="show2-item-r">
+                            <p><a href="https://www.liverpool.ac.uk/study/openday/food/" target="_blank">Canteen</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="show2-li">
+                    <div class="show2-item clear">
+                        <a href="https://www.liverpool.ac.uk/careers/" target="_blank" class="show2-item-l">
+                            <img src="images/home/img4.jpg" alt="">
+                        </a>
+                        <div class="show2-item-r">
+                            <p><a href="https://www.liverpool.ac.uk/careers/" target="_blank">Career Center</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="show2-li">
+                    <div class="show2-item clear">
+                        <a href="https://www.liverpool.ac.uk/studentsupport/" class="show2-item-l">
+                            <img src="images/home/img5.jpg" alt="">
+                        </a>
+                        <div class="show2-item-r">
+                            <p><a href="https://www.liverpool.ac.uk/studentsupport/" target="_blank">Student Center</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="show2-li">
+                    <div class="show2-item clear">
+                        <a href="https://www.liverpool.ac.uk/study/undergraduate/welcome-to-liverpool/campus/health/" target="_blank" class="show2-item-l">
+                            <img src="images/home/img6.jpg" alt="">
+                        </a>
+                        <div class="show2-item-r">
+                            <p><a href="https://www.liverpool.ac.uk/study/undergraduate/welcome-to-liverpool/campus/health/" target="_blank">Health</a></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+      </br></br>
+    <iframe src="bottom.html" style="display:block;" frameBorder=0 marginwidth=0 marginheight=0 scrolling=no width=100%  height=270 scrolling=no ALLOWTRANSPARENCY=”true”></iframe>
+</body>
+
+</html>

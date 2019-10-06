@@ -1,0 +1,109 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+   
+}
+
+.EventSettingSection{
+width: 700px;
+height:auto；
+left:100px;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 30px;
+box-shadow: 10px 10px 5px 5px #888888;
+border-radius: 10%;
+background:#fd113a;
+top:3%;
+left:20%;
+position:relative;
+}
+
+.littleEventSettingSection{
+margin-bottom: 30px;
+}
+
+.writelittleEventSection{
+	margin-left: 10px;
+	width: 300px;
+	height: 30px;
+}
+
+.EventTexttip{
+	width: 100px;
+	color: white;
+	font-size: 20px;
+	/*font-weight: bold;*/
+}
+
+.SavebuttonEventPage{
+	margin-bottom: 50px;
+}
+
+.EditEventPgeOurLogo{
+	width: ;
+	height:50px;
+	margin-bottom: 30px;
+
+}
+
+/*.photoEventSettingSection{
+
+}*/
+
+      	/**event limitation的外貌css**/
+        .radioLimitation {
+        	 outline: none;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-color: #ffffff;
+            border: solid 1px #dddddd;
+            -webkit-border-radius: 0.6rem;
+            border-radius: 0.6rem;
+            font-size: 15px;
+            margin-bottom: 10px;
+            padding: 0;
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            cursor: default;
+            -webkit-appearance: none;  /**隐藏原生控件**/
+        }
+                
+
+        /**选择后的样式**/
+        .radioLimitation:checked{
+            background-color: #04c9e8;
+            border: solid 1px #00adc8;
+            box-shadow: 0 1px 1px rgba(0,0,0,.1);
+            text-align: center;
+            background-clip: padding-box;
+        }
+
+         /**选择后 里面小对勾样式**/
+        .radioLimitation:checked:before{
+            content: '';
+            width: 0.5rem;
+            height: 0.3rem;
+            border: 1px solid #ffffff;
+            border-top: none;
+            border-right: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -0.25rem;
+            margin-top: -0.25rem;
+            -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+        }
+
+
+
+.SavebuttonEventPage{
+background-color: white;
+width: 90px;
+height: 30px;
+font-size: 15px;
+}
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>OUTDOOR Society</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/SocietyClassification.css" media="screen" />
+<!--脚本文件均为动态背景js 与网页内容无关-->
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.particleground.min.js'></script>
+<style type="text/css">
+  body{
+    background-color: #FF9933;
+  }
+  .SocietyClassificationTitle{
+    color: black;
+  }
+  .ClassificationEventName{
+    color: black;
+  }
+</style>
+</head>
+<script>
+	//nocache = "&nocache=" + Math.random() * 1000000
+	function sendAjax(url,method,param,fnSucc)
+	{
+		//url="./../../fuckwebsite/eventback.php?id=1";
+		var request = new ajaxRequest();
+		//request.open("GET", "urlget.php?url=amazon.com/gp/aw" + nocache, true)
+		//request.open("GET", "./../../fuckwebsite/eventback.php?id=1",true);
+		if(method==="GET")
+		{
+			//alert(url+"?"+param);
+			request.open("GET",url+"?"+param,true);
+			request.send(null);
+		}
+		else if(method==="POST")
+		{
+			request.open("POST",url,true)
+			request.setRequestHeader('content-type','application/x-www-form-urlencoded');
+			request.send(param);
+		}
+
+
+
+		request.onreadystatechange = function()
+		{
+			if (this.readyState === 4)
+			{
+				if (this.status === 200)
+				{
+					if (this.responseText != null)
+					{
+						//document.getElementById('info').innerHTML =String(this.responseText);
+						//fnSucc(this.responseText);
+						// alert(this.responseText);
+
+
+						var obj=JSON.parse(this.responseText);
+						fnSucc(obj);
+					}
+					else alert("Ajax error: No data received")
+				}
+				else alert( "Ajax error: " + this.statusText)
+			}
+		}
+	}
+
+	function getHsonLength(json){
+		var jsonLength=0;
+		for (var i in json) {
+			jsonLength++;
+		}
+		return jsonLength;
+	}
+
+	function ajaxRequest()
+	{
+		try
+		{
+			var request = new XMLHttpRequest()
+		}
+		catch(e1)
+		{
+			try
+			{
+				request = new ActiveXObject("Msxml2.XMLHTTP")
+			}
+			catch(e2)
+			{
+				try
+				{
+					request = new ActiveXObject("Microsoft.XMLHTTP")
+				}
+				catch(e3)
+				{
+					request = false
+				}
+			}
+		}
+		return request
+	}
+
+
+
+	//document.getElementById('info').innerHTML =
+	//sendAjax("./societyback.php","GET","id=1",function (obj)
+
+
+	function a(){
+
+		sendAjax("./classifyback.php","GET","class=Outdoor",function(obj)
+		{
+
+			//document.getElementById('info').innerHTML =obj.resultCode+" "+getHsonLength(obj);
+			//document.getElementById("1");
+			//document.getElementById('info').innerHTML =obj.img[0];
+			var ul = document.getElementById("1");
+			for (var i = 0; i <= getHsonLength(obj.img) - 1; i++) {
+				var li = document.createElement("li");
+				li.setAttribute("class", "ClassificationEventResult");
+
+				var a = document.createElement("a");
+				a.setAttribute("href", obj.link[i]);
+
+				var img = document.createElement("img");
+				img.setAttribute("class","ClassificationSearchSquare")
+				img.setAttribute("src", obj.img[i])
+				//alert(obj.img[i]);
+
+				var p = document.createElement("p");
+				p.setAttribute("class","ClassificationEventName")
+				p.innerHTML= obj.name[i]
+
+				a.appendChild(img);
+				li.appendChild(a);
+				li.appendChild(p);
+				ul.appendChild(li);
+
+			}
+		});
+
+	}
+
+</script>
+<body id="Classificationbody" onload="a()">
+<div id="particles">
+	<div class="intro">
+	</div>
+</div>
+<p class="SocietyClassificationTitle">OUTDOOR</p>
+<ul class="ClassificationSearchEvent" id="1">
+
+</ul>
+</body>
+</html>

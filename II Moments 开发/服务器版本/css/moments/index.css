@@ -1,0 +1,77 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, small, strong, dl, dt, dd, ol, ul, li {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+em, strong, i {
+  font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+ul, ol {
+  list-style: none;
+}
+a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #444;
+}
+input, button {
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+img {
+  vertical-align: top;
+}
+/* ====== main ====== */
+
+.postmoments a{
+  position: fixed;
+  right:15%;
+  top:20%;
+  width:150px;
+  height: 60px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  background-color: #22b4f6;
+  border-radius: 4px;
+  font-size: 20px;
+
+}
+.postmoments a:hover {
+  background-color: #ff4466;
+  text-decoration: none;
+}
+
+
+
+
+.loadMore a{
+  display: block;
+  margin-left: 45%; 
+  width:100px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  background-color: #22b4f6;
+  border-radius: 4px;
+  font-size: 14px;
+
+}
+.loadMore a:hover {
+  background-color: #ff4466;
+  text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}

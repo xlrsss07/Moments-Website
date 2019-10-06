@@ -1,0 +1,103 @@
+body{
+	background-image:url("../../images/search/BG.jpg");
+}
+
+.searchframe{
+   /*set the font, background and position of website body*/
+  font-family:Georgia,"Times New Roman", Times, serif;
+  color:black;
+  
+  background-size: cover;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header.SearchHead{
+	margin-top: 30px;
+	padding-left:20px; 
+  	padding-right:20px;
+	height: 400px;
+	overflow: hidden;
+	text-align:center;
+	font-family:Helvetica, Geneva, Arial,SunSnas-Regular,sans-serif;
+  	background-size:cover;
+  	font-size:70px;
+  	color:white;
+  	box-shadow: 10px 10px 5px #888888;
+}
+
+.SearchNUM{
+    position: relative;
+	margin-top: 130px;
+    text-align:center;
+	display: inline-flex;
+}
+
+.SearchClub{
+	
+}
+
+.ClubResult{
+    float: left;
+    padding-right:40px;
+	font-size: 18px;
+	text-align: center;
+	transition: all 0.8s;
+	z-index: 0;
+}
+
+.ClubResult:hover{
+	transform: scale(1.1);
+}
+
+.Searchcircle{
+	width:100px;
+	height: 100px;
+	line-height: 100px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+
+.SearchEvent{
+	
+}
+
+.EventResult{
+    float: left;
+    padding-right:15px;
+	font-size: 18px;
+	text-align: center;
+	transition: all 0.8s;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.EventResult:hover{
+	transform: scale(1.05);
+}
+
+.EventName{
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.SearchSquare{
+	width:220px; 
+	height: 340px;
+	line-height: 100px;
+	cursor: pointer;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+
+.SearchH1{
+	margin: 20px 0px 0px 0px;
+	font-size: 40px;
+	padding-bottom: 30px;
+}
+
+.clear {
+    clear: both;
+    width: 10000px;
+}

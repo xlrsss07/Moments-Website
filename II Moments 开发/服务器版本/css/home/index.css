@@ -1,0 +1,370 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
+}
+body {
+    font-size: 14px;
+}
+a {
+    font-size: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+i {
+    font-style: normal;
+}
+li {
+    list-style: none;
+}
+.header {
+    height: 140px;
+    width: 100%;  
+}
+
+/*最上面的导航栏信息*/
+
+/*logo的信息*/
+
+
+/*菜单栏栏信息*/
+
+
+/* 开始的第一部分*/
+
+
+/* 主要社团活动信息*/
+
+.main-cont__title h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: #333;
+}
+
+.border {
+        width: 180px;
+        height: 4px;
+        background: #333;
+        margin: 0px auto;
+}
+
+.main-cont {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10 40px; 
+  margin-bottom: 70px;
+  
+}
+.main-cont__list{
+  width: 80%;
+  position: relative;
+  margin-left:0px;
+  
+}
+
+
+.main-cont__list .item1 {
+  position: relative;
+  top: 0;
+  float: left;
+  width: 170px;
+  margin-top: 40px;
+  margin-right: 10px;
+  border: 1px solid #dedfe0;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 8px;
+  transition: top 0.2s;
+}
+
+.main-cont__list .item1:hover {
+  top: -3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+/* main-album */
+.main-album .main-cont__list .item {
+  height: 328px;
+}
+.main-album .pic,
+.main-album .pic img {
+  border-radius: 8px;
+  width: 100%;
+  height: 170px;
+}
+.main-album .info {
+  padding-left: 12px;
+}
+.main-album .info .title {
+  margin: 15px 0 28px;
+  font-weight: 700;
+}
+.main-album .info p {
+  line-height: 18px;
+  color: #888;
+}
+.main-album .info .author {
+  display: inline;
+  color: #888;
+}
+
+
+/*第一部分的右边*/
+.show-r{
+  width: 20%;
+  float:right;
+  margin-right: 0px;
+  margin-top:20px;
+  position: relative;
+ 
+}
+.show-wb-title{
+  font-size: 22px;
+
+  line-height:33px;
+}
+.show-wb-li{
+  font-size: 18px;
+  position:relative;
+    padding-left: 30px;
+    height: 18px;
+    line-height: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.show-wb-li a{
+    color:#000;
+}
+.show-wb-li a:hover{
+    color:deepskyblue;
+}
+.number{
+    position:absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    left: 0;
+    background-color: deeppink;
+    text-align: center;
+    line-height: 18px;
+    color:#fff;
+}
+.more{
+    background-color: #eee;
+}
+
+
+/*第二部分*/
+.contain {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10 40px; 
+  margin-bottom: 50px;
+  
+}
+.gallery {
+  width: 75%;
+  position: relative;
+  margin-left:0px;
+  margin-top:20px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  
+}
+.gallery .image {
+  flex: 22%;
+  margin-top: 20px;
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery .image img {
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+}
+.gallery .image:hover img {
+  transform: scale(1.4) rotate(15deg);
+}
+@media screen and (max-width: 960px) {
+  .gallery.image {
+    flex: 33.33%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .gallery .image {
+    flex: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .gallery .image {
+    flex: 100%;
+  }
+}
+
+/*bilibili-show2*/
+.show2{
+   width: 100%;
+
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10 40px; 
+  margin-bottom: 50px;
+  margin-top: 30px;
+    
+}
+.show2-ct{
+   
+    width:90%;
+    margin: 0 auto;
+}
+.show2-li{
+    float: left;
+    width: 350px;
+    margin-left: 40px;
+    margin-bottom:36px;
+}
+/*小item的左边*/
+.show2-item-l{
+    float:left;
+    width:325px;
+    height:400px;
+    margin-right: 40px;
+    border-radius:5px;
+    overflow: hidden;
+}
+.show2-item-l img{
+    width:100%;
+    height:100%;
+    transition:all 0.3s;
+}
+.show2-item-l img:hover{
+    transform: scale(1.2);
+}
+/*小item的右边*/
+.show2-item-r{
+  font-size: 20px;
+  margin-top: 10px;
+    float:left;
+    width: 250px;
+    text-align: center;
+}
+.show2-item-r a{
+    color:#000;
+}
+.show2-item-r a:hover{
+    color:deepskyblue;
+}
+
+
+.clear {
+  clear: both;
+  }
+
+/* ====== footer ====== */
+.footer {
+  margin-top: 1000px;
+  padding-top: 22px;
+  padding-bottom: 24px;
+  border-top: 1px solid #d8d9da;
+  background-color: #e1e2e3;
+}
+.footer-container {
+  width: 1220px;
+  margin: 0 auto;
+}
+.footer-link {
+  margin-bottom: 28px;
+  height: 160px;
+}
+.footer-link__item {
+  float: left;
+  width: 20%;
+  height: 100%;
+  border-left: 1px solid #cfd0d1;
+  box-sizing: border-box;
+}
+.footer-title {
+  margin-left: 34px;
+  line-height: 38px;
+  color: #444;
+}
+.footer-list {}
+.footer-list .item {
+  float: left;
+  width: 50%;
+  line-height: 28px;
+  text-align: center;
+}
+.footer-list .item a,
+.orcode-text p {
+  color: #666;
+}
+.footer-list .item a:hover {}
+.footer-orcode {
+  width: 100%;
+  text-align: center;
+}
+.footer-orcode img {
+  display: inline-block;
+}
+.orcode-text {
+  width: 100%;
+  text-align: center;
+}
+.orcode-text p {
+  line-height: 20px;
+}
+.fopter-copyright {
+  text-align: center;
+}
+.fopter-copyright p {
+  line-height: 36px;
+  color: #888;
+}
+
+.main-cont__title2 {
+  position: relative;
+  height: 88px;
+  margin-top: 900px;
+  margin-left: 40px;
+ 
+}
+
+.main-cont__title2 .more {
+  text-align: center;
+  margin-right: 50px;
+  position: absolute;
+  right: 0;
+  top: 28px;
+  width: 80px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  background-color: #22b4f6;
+  
+  font-size: 12px;
+}
+.main-cont__title2 .more:hover {
+  background-color: #1e9ed8;
+}
+
+ 
+
+
+
+
+@media screen and (max-width: 1400px) {
+    .header-nav-content,
+    .header-content,
+    .slider,
+    .slider .pic,
+    .slider-wrapper,
+   
+    .home {
+        margin-right: 12px;
+    }
+}
